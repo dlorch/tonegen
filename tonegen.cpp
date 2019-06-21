@@ -131,7 +131,7 @@ int main() {
     const int sampleRateHz  = 22050;    // number of samples per second
     const int numChannels   = 1;        // Mono
     const int bitsPerSample = CHAR_BIT; // 8 bits 
-    const double volume     = 0.75;    // 0.0 .. 1.0
+    const double volume     = 0.75;     // 0.0 .. 1.0
 
     ToneGenerator tone = ToneGenerator();
     Sampler sampler    = Sampler(sampleRateHz, bitsPerSample, numChannels);
