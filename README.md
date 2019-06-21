@@ -36,7 +36,7 @@ $ ./tonegen
 Wrote mary.wav
 ```
 
-Now play back `mary.wav`.
+Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/mary.wav).
 
 This is how [Audacity](https://www.audacityteam.org/) represents the generate file:
 
