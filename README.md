@@ -19,7 +19,7 @@ How does a computer generate sound? A [digital-to-analog converter (DAC)](https:
 typically "the sound card", takes sequence of numbers and turn them into eletric current,
 which in turn moves the speaker's electromagnet forward or backwards. Suppose I use an
 8-bit value for a single a sound sample, then the values 0 and 255 respectively move
-[the magnet](https://animagraffs.com/loudspeaker/) frome one to the other extremity.
+[the magnet](https://animagraffs.com/loudspeaker/) from one to the other extremity.
 
 A common format to represent sound waves in digital form is given by
 [Pulse Code Modulation (PCM)](https://www.tutorialspoint.com/digital_communication/digital_communication_pulse_code_modulation.htm)
