@@ -57,5 +57,7 @@ Links / Concepts
     * [Overtones, harmonics and Additive synthesis](https://www.youtube.com/watch?v=YsZKvLnf7wU)
     * [Additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis)
     * [Harmonic](https://en.wikipedia.org/wiki/Harmonic)
+* Envelope
+    * [Attack, Decay, Sustain, Release (ADRS) Envelope)](https://en.wikipedia.org/wiki/Envelope_(music))
 * WAVE File Format
     * [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
