@@ -55,15 +55,15 @@ double SquareWaveGenerator::generate(int fundamentalFrequencyHz, double timeInde
     double thirdHarmonicRadians = timeIndex / thirdHarmonicPeriodSeconds * (2 * M_PI);
     double thirdHarmonicAmplitude = 1.0 / 3.0;
 
-    double fifthHarmonicPeriodSeconds = 1.0 / (fundamentalFrequencyHz * 3);
+    double fifthHarmonicPeriodSeconds = 1.0 / (fundamentalFrequencyHz * 5);
     double fifthHarmonicRadians = timeIndex / fifthHarmonicPeriodSeconds * (2 * M_PI);
     double fifthHarmonicAmplitude = 1.0 / 5.0;
 
-    double seventhHarmonicPeriodSeconds = 1.0 / (fundamentalFrequencyHz * 3);
+    double seventhHarmonicPeriodSeconds = 1.0 / (fundamentalFrequencyHz * 7);
     double seventhHarmonicRadians = timeIndex / seventhHarmonicPeriodSeconds * (2 * M_PI);
     double seventhHarmonicAmplitude = 1.0 / 7.0;
 
-    double ninthHarmonicPeriodSeconds = 1.0 / (fundamentalFrequencyHz * 3);
+    double ninthHarmonicPeriodSeconds = 1.0 / (fundamentalFrequencyHz * 9);
     double ninthHarmonicRadians = timeIndex / ninthHarmonicPeriodSeconds * (2 * M_PI);
     double ninthHarmonicAmplitude = 1.0 / 9.0;
 
