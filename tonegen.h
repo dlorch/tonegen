@@ -3,15 +3,20 @@
 
 #include <climits>
 
-// TODO should consider using static methods only; need to think about what it means for subclassing
-
 class ToneGenerator
 {
     public:
+        // the tone generator returns a continous result between [-1.0, 1.0]
         virtual double generate(int toneFrequencyHz, double timeIndex) = 0;
 };
 
 class PureToneGenerator: public ToneGenerator
+{
+    public:
+        double generate(int toneFrequencyHz, double timeIndex);
+};
+
+class SquareWaveGenerator: public ToneGenerator
 {
     public:
         double generate(int toneFrequencyHz, double timeIndex);
@@ -175,6 +180,7 @@ typedef struct // Sound data
     uint32_t Subchunk2Size;
 } DataSubChunk;
 
+// TODO should consider using static methods only
 class WAVWriter
 {
     public:

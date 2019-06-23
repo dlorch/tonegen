@@ -42,21 +42,20 @@ This is how [Audacity](https://www.audacityteam.org/) represents the generate fi
 
 ![Audacity showing mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/mary.png)
 
-Concepts
---------
+Links / Concepts
+----------------
 
-* Pulse Code Modulation (PCM)
-* WAVE file format
-* Musical notes
-
-Links
------
-
-* [Pulse Code Modulation](https://www.tutorialspoint.com/digital_communication/digital_communication_pulse_code_modulation.htm)
-* [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
-* [How speakers make sound - Animagraffs](https://animagraffs.com/loudspeaker/)
-* [Digital to Analog Converter (DAC)](https://en.wikipedia.org/wiki/Digital-to-analog_converter)
-* [portable_endian.h](https://gist.github.com/panzi/6856583)
-* [Frequencies of Musical Notes](https://pages.mtu.edu/~suits/notefreqs.html)
-* [Scientific pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
-* [Audacity](https://www.audacityteam.org/)
+* Fundamentals of Sound
+    * [Pulse Code Modulation (PCM)](https://www.tutorialspoint.com/digital_communication/digital_communication_pulse_code_modulation.htm)
+    * [How speakers make sound - Animagraffs](https://animagraffs.com/loudspeaker/)
+    * [Digital to Analog Converter (DAC)](https://en.wikipedia.org/wiki/Digital-to-analog_converter)
+    * [Frequencies of Musical Notes](https://pages.mtu.edu/~suits/notefreqs.html)
+    * [Scientific pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
+    * [Audacity](https://www.audacityteam.org/)
+ * Synthesis of Complex Sounds
+    * [Project 1 - Synthesis of Musical Notes and Instrument Sounds with Sinusoids (Qi, 2015)](https://web.eecs.utk.edu/~qi/ece505/project/proj1.pdf)
+    * [Overtones, harmonics and Additive synthesis](https://www.youtube.com/watch?v=YsZKvLnf7wU)
+    * [Additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis)
+    * [Harmonic](https://en.wikipedia.org/wiki/Harmonic)
+* WAVE File Format
+    * [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
