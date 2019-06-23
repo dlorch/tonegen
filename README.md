@@ -33,14 +33,14 @@ Compile and run:
 ```
 $ make
 $ ./tonegen
-Wrote mary.wav
+Wrote output/mary.wav
 ```
 
 Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/mary.wav).
 
 This is how [Audacity](https://www.audacityteam.org/) represents the generate file:
 
-![Audacity showing mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/mary.png)
+![Audacity showing mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.png)
 
 Links / Concepts
 ----------------
@@ -52,7 +52,7 @@ Links / Concepts
     * [Frequencies of Musical Notes](https://pages.mtu.edu/~suits/notefreqs.html)
     * [Scientific pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
     * [Audacity](https://www.audacityteam.org/)
- * Synthesis of Complex Sounds
+* Synthesis of Complex Sounds
     * [Project 1 - Synthesis of Musical Notes and Instrument Sounds with Sinusoids (Qi, 2015)](https://web.eecs.utk.edu/~qi/ece505/project/proj1.pdf)
     * [Overtones, harmonics and Additive synthesis](https://www.youtube.com/watch?v=YsZKvLnf7wU)
     * [Additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis)

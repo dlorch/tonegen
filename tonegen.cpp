@@ -189,11 +189,11 @@ int main() {
         sampler.sample(&tone, marySong[i], 0.25, volume);
     }
 
-    std::ofstream maryFile("mary.wav", std::ios::out | std::ios::binary);
+    std::ofstream maryFile("output/mary.wav", std::ios::out | std::ios::binary);
     WAVWriter wavWriter = WAVWriter();
     wavWriter.writeSamplesToBinaryStream(&sampler, &maryFile);
     maryFile.close();
-    std::cout << "Wrote mary.wav" << std::endl;
+    std::cout << "Wrote output/mary.wav" << std::endl;
 
     return 0;
 }
