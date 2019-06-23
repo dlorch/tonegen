@@ -4,7 +4,14 @@
 #include <climits>
 
 // TODO should consider using static methods only; need to think about what it means for subclassing
+
 class ToneGenerator
+{
+    public:
+        virtual double generate(int toneFrequencyHz, double timeIndex) = 0;
+};
+
+class PureToneGenerator: public ToneGenerator
 {
     public:
         double generate(int toneFrequencyHz, double timeIndex);

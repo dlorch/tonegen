@@ -28,7 +28,6 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -37,7 +36,8 @@
 #include "tonegen.h"
 #include "portable_endian.h"
 
-double ToneGenerator::generate(int toneFrequencyHz, double timeIndex)
+// the tone generator returns a continous result between [-1.0, 1.0]
+double PureToneGenerator::generate(int toneFrequencyHz, double timeIndex)
 {
     double tonePeriodSeconds = 1.0 / toneFrequencyHz;
     double radians = timeIndex / tonePeriodSeconds * (2 * M_PI);
@@ -134,8 +134,8 @@ int main() {
     const int bitsPerSample = CHAR_BIT; // 8 bits 
     const double volume     = 0.75;     // 0.0 .. 1.0
 
-    ToneGenerator tone = ToneGenerator();
-    Sampler sampler    = Sampler(sampleRateHz, bitsPerSample, numChannels);
+    PureToneGenerator tone = PureToneGenerator();
+    Sampler sampler        = Sampler(sampleRateHz, bitsPerSample, numChannels);
 
     // Mary had a Little Lamb: http://www.choose-piano-lessons.com/piano-notes.html
     const int marySong[] =
