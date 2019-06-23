@@ -97,6 +97,7 @@ std::vector<char>& Sampler::getSampleData()
     return this->sampleData;
 }
 
+// WAVE Format: http://soundfile.sapp.org/doc/WaveFormat/
 void WAVWriter::writeSamplesToBinaryStream(Sampler *sampler, std::ofstream *wavStream)
 {
     DataSubChunk dataSubChunk;
