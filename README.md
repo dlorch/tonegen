@@ -38,9 +38,9 @@ Wrote output/mary.wav
 
 Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.wav).
 
-This is how [Audacity](https://www.audacityteam.org/) represents the pure-tone generate file:
+This is how [Audacity](https://www.audacityteam.org/) represents the file. Section with "pure tone" (sinusoidal) generator shown:
 
-![Audacity showing mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary_puretone.png)
+![Audacity showing mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.png)
 
 Links / Concepts
 ----------------

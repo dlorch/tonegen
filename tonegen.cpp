@@ -166,8 +166,10 @@ int main() {
     const int bitsPerSample = CHAR_BIT; // 8 bits 
     const double volume     = 0.75;     // 0.0 .. 1.0
 
-    SquareWaveGenerator tone = SquareWaveGenerator();
-    Sampler sampler          = Sampler(sampleRateHz, bitsPerSample, numChannels);
+    PureToneGenerator pureTone     = PureToneGenerator();
+    SquareWaveGenerator squareWave = SquareWaveGenerator();
+
+    Sampler sampler = Sampler(sampleRateHz, bitsPerSample, numChannels);
 
     // Mary had a Little Lamb: http://www.choose-piano-lessons.com/piano-notes.html
     const int marySong[] =
@@ -186,7 +188,12 @@ int main() {
 
     for(int i=0; i<maryLength; i++)
     {
-        sampler.sample(&tone, marySong[i], 0.25, volume);
+        sampler.sample(&pureTone, marySong[i], 0.25, volume);
+    }
+
+    for(int i=0; i<maryLength; i++)
+    {
+        sampler.sample(&squareWave, marySong[i], 0.25, volume);
     }
 
     std::ofstream maryFile("output/mary.wav", std::ios::out | std::ios::binary);
