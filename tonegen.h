@@ -7,19 +7,46 @@ class ToneGenerator
 {
     public:
         // the tone generator returns a continous result between [-1.0, 1.0]
-        virtual double generate(int toneFrequencyHz, double timeIndex) = 0;
+        virtual double generate(int toneFrequencyHz, double timeIndexSeconds) = 0;
 };
 
 class PureToneGenerator: public ToneGenerator
 {
     public:
-        double generate(int toneFrequencyHz, double timeIndex);
+        double generate(int toneFrequencyHz, double timeIndexSeconds);
 };
 
 class SquareWaveGenerator: public ToneGenerator
 {
     public:
-        double generate(int toneFrequencyHz, double timeIndex);
+        double generate(int toneFrequencyHz, double timeIndexSeconds);
+};
+
+class Envelope
+{
+    public:
+        virtual double getAmplitude(double timeIndexSeconds) = 0;
+};
+
+class NoEnvelope: public Envelope
+{
+    double getAmplitude(double timeIndexSeconds);
+};
+
+// Attack, Decay, Sustain, Release (ADSR) Envelope: https://en.wikipedia.org/wiki/Envelope_(music)
+class ADSREnvelope: public Envelope
+{
+    private:
+        double attackDurationSeconds;
+        double attackAmplitude;
+        double decayDurationSeconds;
+        double sustainDurationSeconds;
+        double sustainAmplitude;
+        double releaseDurationSeconds;
+        double releaseAmplitude;
+    public:
+        ADSREnvelope(double durationSeconds);
+        double getAmplitude(double timeIndexSeconds);
 };
 
 #include <vector>
@@ -34,7 +61,7 @@ class Sampler
         Sampler();
     public:
         Sampler(int sampleRateHz, int bitsPerSample, int numChannels);
-        void sample(ToneGenerator* generator, int toneFrequencyHz, double durationSecs, double volume);
+        void sample(ToneGenerator* generator, int toneFrequencyHz, double durationSeconds, Envelope* envelope, double volume);
         int getSampleRateHz();
         int getBitsPerSample();
         int getNumChannels();
