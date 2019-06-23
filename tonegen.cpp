@@ -71,7 +71,7 @@ double SquareWaveGenerator::generate(int fundamentalFrequencyHz, double timeInde
 
     double result = sin(firstHarmonicRadians) \
                   + thirdHarmonicAmplitude   * sin(thirdHarmonicRadians) \
-                  + fifthHarmonicAmplitude   * sin(fifthHarmonicAmplitude) \
+                  + fifthHarmonicAmplitude   * sin(fifthHarmonicRadians) \
                   + seventhHarmonicAmplitude * sin(seventhHarmonicRadians) \
                   + ninthHarmonicAmplitude   * sin(ninthHarmonicRadians);
 
