@@ -22,6 +22,12 @@ class SquareWaveGenerator: public ToneGenerator
         double generate(int toneFrequencyHz, double timeIndexSeconds);
 };
 
+class ViolinGenerator: public ToneGenerator
+{
+    public:
+        double generate(int toneFrequencyHz, double timeIndexSeconds);
+};
+
 class Envelope
 {
     public:
