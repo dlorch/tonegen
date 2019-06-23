@@ -57,7 +57,9 @@ Links / Concepts
     * [Overtones, harmonics and Additive synthesis](https://www.youtube.com/watch?v=YsZKvLnf7wU)
     * [Additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis)
     * [Harmonic](https://en.wikipedia.org/wiki/Harmonic)
+    * [Music Meets Science. 1 Pitch & Frequency, 2.Timbre & Complex Wave, 3. Frequency & Harmonics](https://www.youtube.com/watch?v=sWVvm8JPGcU)
 * Envelope
     * [Attack, Decay, Sustain, Release (ADRS) Envelope](https://en.wikipedia.org/wiki/Envelope_(music))
 * WAVE File Format
     * [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
+    * [portable_endian.h](https://gist.github.com/panzi/6856583)
