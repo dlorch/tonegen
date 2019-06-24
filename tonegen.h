@@ -213,11 +213,10 @@ typedef struct // Sound data
     uint32_t Subchunk2Size;
 } DataSubChunk;
 
-// TODO should consider using static methods only
 class WAVWriter
 {
     public:
-        void writeSamplesToBinaryStream(Sampler* sampler, std::ofstream* wavStream);
+        static void writeSamplesToBinaryStream(Sampler* sampler, std::ofstream* wavStream);
 };
 
 #endif

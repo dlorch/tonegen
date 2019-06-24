@@ -327,8 +327,7 @@ int main() {
     }
 
     std::ofstream maryFile("output/mary.wav", std::ios::out | std::ios::binary);
-    WAVWriter wavWriter = WAVWriter();
-    wavWriter.writeSamplesToBinaryStream(&sampler, &maryFile);
+    WAVWriter::writeSamplesToBinaryStream(&sampler, &maryFile);
     maryFile.close();
     std::cout << "Wrote output/mary.wav" << std::endl;
 
