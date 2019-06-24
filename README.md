@@ -38,9 +38,19 @@ Wrote output/mary.wav
 
 Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.wav).
 
-This is how [Audacity](https://www.audacityteam.org/) represents the file. Section with "pure tone" (sinusoidal) generator shown:
+This is how [Audacity](https://www.audacityteam.org/) represents the file.
 
-![Audacity showing mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.png)
+Section with "pure tone" (sine waves):
+
+![sine waves](https://raw.githubusercontent.com/dlorch/tonegen/master/images/sine.png)
+
+Section with square waves:
+
+![square waves](https://raw.githubusercontent.com/dlorch/tonegen/master/images/square.png)
+
+Section with Attack, Decay, Sustain, Release (ADSR) envelope:
+
+![adsr envelope](https://raw.githubusercontent.com/dlorch/tonegen/master/images/adsr_envelope.png)
 
 Links / Concepts
 ----------------
