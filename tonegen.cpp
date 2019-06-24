@@ -147,8 +147,8 @@ ADSREnvelope::ADSREnvelope(double durationSeconds)
     this->sustainAmplitude       = 0.7;
     this->sustainDurationSeconds = durationSeconds * 0.7;
 
-    this->releaseDurationSeconds = durationSeconds * 0.1;
     this->releaseAmplitude       = 0.0;
+    this->releaseDurationSeconds = durationSeconds * 0.1;
 }
 
 double ADSREnvelope::getAmplitude(double timeIndexSeconds)
