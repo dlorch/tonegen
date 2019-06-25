@@ -7,25 +7,31 @@ class ToneGenerator
 {
     public:
         // the tone generator returns a continous result between [-1.0, 1.0]
-        virtual double generate(int toneFrequencyHz, double timeIndexSeconds) = 0;
+        virtual double generate(int toneFrequencyHz, double timeIndexSeconds, double durationSeconds) = 0;
 };
 
 class PureToneGenerator: public ToneGenerator
 {
     public:
-        double generate(int toneFrequencyHz, double timeIndexSeconds);
+        double generate(int toneFrequencyHz, double timeIndexSeconds, double durationSeconds);
 };
 
 class SquareWaveGenerator: public ToneGenerator
 {
     public:
-        double generate(int toneFrequencyHz, double timeIndexSeconds);
+        double generate(int toneFrequencyHz, double timeIndexSeconds, double durationSeconds);
 };
 
 class ViolinGenerator: public ToneGenerator
 {
     public:
-        double generate(int toneFrequencyHz, double timeIndexSeconds);
+        double generate(int toneFrequencyHz, double timeIndexSeconds, double durationSeconds);
+};
+
+class ChirpGenerator: public ToneGenerator
+{
+    public:
+        double generate(int toneFrequencyHz, double timeIndexSeconds, double durationSeconds);
 };
 
 class Envelope

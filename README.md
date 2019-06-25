@@ -68,6 +68,9 @@ Links / Concepts
     * [Additive synthesis](https://en.wikipedia.org/wiki/Additive_synthesis)
     * [Harmonic](https://en.wikipedia.org/wiki/Harmonic)
     * [Music Meets Science. 1 Pitch & Frequency, 2.Timbre & Complex Wave, 3. Frequency & Harmonics](https://www.youtube.com/watch?v=sWVvm8JPGcU)
+    * [FM SYNTHS in under 4 minutes | Andrew Huang](https://www.youtube.com/watch?v=vvBl3YUBUyY)
+    * [Frequency modulation synthesis](https://en.wikipedia.org/wiki/Frequency_modulation_synthesis)
+    * [Synthesis of Complex Audio Spectra by Means of Frequency Modulation (Chowning, 1973)](https://web.eecs.umich.edu/~fessler/course/100/misc/chowning-73-tso.pdf)
 * Envelope
     * [Attack, Decay, Sustain, Release (ADRS) Envelope](https://en.wikipedia.org/wiki/Envelope_(music))
 * WAVE File Format
