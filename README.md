@@ -34,11 +34,11 @@ Compile and run:
 $ make
 $ ./tonegen
 Wrote output/mary.wav
+Wrote output/bells.wav
 ```
+Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.mp3) or bells.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/bells.mp3) (converted to .mp3 using `sox` for convenience).
 
-Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.wav).
-
-This is how [Audacity](https://www.audacityteam.org/) represents the file.
+The following is how [Audacity](https://www.audacityteam.org/) represents the file:
 
 Section with "pure tone" (sine waves):
 
