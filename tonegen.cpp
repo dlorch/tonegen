@@ -131,6 +131,8 @@ double ViolinGenerator::generate(int fundamentalFrequencyHz, double timeIndexSec
 double ChirpGenerator::generate(int initialFrequencyHz, double timeIndexSeconds, double durationSeconds)
 {
     int finalFrequencyHz = initialFrequencyHz * 10;
+
+    // modulate the frequency with time, linearly decreasing from initialFrequencyHz to finalFrequencyHz
     int momentaryFrequencyHz = initialFrequencyHz + (double)finalFrequencyHz / durationSeconds * timeIndexSeconds;
 
     double tonePeriodSeconds = 1.0 / momentaryFrequencyHz;
@@ -339,9 +341,9 @@ int main() {
         sampler.sample(&violin, marySong[i], noteDuration, &adsrEnvelope, volume);
     }
 
-    sampler.sample(&chirp, C4, 0.25, &adsrEnvelope, volume);
-    sampler.sample(&chirp, C4, 0.25, &adsrEnvelope, volume);
-    sampler.sample(&chirp, C4, 0.25, &adsrEnvelope, volume);
+    sampler.sample(&chirp, C4, noteDuration, &adsrEnvelope, volume);
+    sampler.sample(&chirp, C4, noteDuration, &adsrEnvelope, volume);
+    sampler.sample(&chirp, C4, noteDuration, &adsrEnvelope, volume);
 
     std::ofstream maryFile("output/mary.wav", std::ios::out | std::ios::binary);
     WAVWriter::writeSamplesToBinaryStream(&sampler, &maryFile);
