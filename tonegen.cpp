@@ -142,6 +142,19 @@ double ChirpGenerator::generate(int initialFrequencyHz, double timeIndexSeconds,
     return result;
 }
 
+BellGenerator::BellGenerator(int fm_Hz, int I0, double tau): fm_Hz(fm_Hz), I0(I0), tau(tau), theta_m(-M_PI/2), theta_c(-M_PI/2)
+{
+}
+
+double BellGenerator::generate(int fc_Hz, double timeIndexSeconds, double durationSeconds)
+{
+    double At = exp(-timeIndexSeconds / this->tau);
+    double It = this->I0 * exp(-timeIndexSeconds / this->tau);
+    double result = At * cos(2 * M_PI * fc_Hz * timeIndexSeconds + It * cos(2 * M_PI * this->fm_Hz * timeIndexSeconds + this->theta_m) + this->theta_c);
+
+    return result;
+}
+
 double NoEnvelope::getAmplitude(double timeIndexSeconds)
 {
     return 1.0;
@@ -196,6 +209,17 @@ double ADSREnvelope::getAmplitude(double timeIndexSeconds)
         // linearly decreasing
         result = this->sustainAmplitude - (this->sustainAmplitude / this->releaseDurationSeconds * relativeTimeIndexSeconds);
     }
+
+    return result;
+}
+
+BellEnvelope::BellEnvelope(double tau): tau(tau)
+{
+}
+
+double BellEnvelope::getAmplitude(double timeIndexSeconds)
+{
+    double result = exp(-timeIndexSeconds / this->tau);
 
     return result;
 }
@@ -349,6 +373,42 @@ int main() {
     WAVWriter::writeSamplesToBinaryStream(&sampler, &maryFile);
     maryFile.close();
     std::cout << "Wrote output/mary.wav" << std::endl;
+
+    // Bells 1-6, https://web.eecs.utk.edu/~qi/ece505/project/proj1.pdf
+    BellGenerator bell1 = BellGenerator(220, 10,   2);
+    BellGenerator bell2 = BellGenerator(440,  5,   2);
+    BellGenerator bell3 = BellGenerator(220, 10,  12);
+    BellGenerator bell4 = BellGenerator(220, 10, 0.3);
+    BellGenerator bell5 = BellGenerator(350,  5,   2);
+    BellGenerator bell6 = BellGenerator(350,  3,   1);
+
+    BellEnvelope bell1Envelope = BellEnvelope(2);
+    BellEnvelope bell2Envelope = BellEnvelope(2);
+    BellEnvelope bell3Envelope = BellEnvelope(12);
+    BellEnvelope bell4Envelope = BellEnvelope(0.3);
+    BellEnvelope bell5Envelope = BellEnvelope(2);
+    BellEnvelope bell6Envelope = BellEnvelope(1);
+
+    const double bell1Duration = 6;
+    const double bell2Duration = 6;
+    const double bell3Duration = 3;
+    const double bell4Duration = 3;
+    const double bell5Duration = 5;
+    const double bell6Duration = 5;
+
+    Sampler bellSampler = Sampler(sampleRateHz, bitsPerSample, numChannels);
+
+    bellSampler.sample(&bell1, 110, bell1Duration, &bell1Envelope, volume);
+    bellSampler.sample(&bell2, 220, bell2Duration, &bell2Envelope, volume);
+    bellSampler.sample(&bell3, 110, bell3Duration, &bell3Envelope, volume);
+    bellSampler.sample(&bell4, 110, bell4Duration, &bell4Envelope, volume);
+    bellSampler.sample(&bell5, 250, bell5Duration, &bell5Envelope, volume);
+    bellSampler.sample(&bell6, 250, bell6Duration, &bell6Envelope, volume);
+
+    std::ofstream bellFile("output/bells.wav", std::ios::out | std::ios::binary);
+    WAVWriter::writeSamplesToBinaryStream(&bellSampler, &bellFile);
+    bellFile.close();
+    std::cout << "Wrote output/bells.wav" << std::endl;
 
     return 0;
 }

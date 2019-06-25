@@ -34,6 +34,19 @@ class ChirpGenerator: public ToneGenerator
         double generate(int toneFrequencyHz, double timeIndexSeconds, double durationSeconds);
 };
 
+class BellGenerator: public ToneGenerator
+{
+    private:
+        int fm_Hz;
+        int I0;
+        double tau;
+        double theta_m;
+        double theta_c;
+    public:
+        BellGenerator(int fm_Hz, int I0, double tau);
+        double generate(int fc_Hz, double timeIndexSeconds, double durationSeconds);
+};
+
 class Envelope
 {
     public:
@@ -42,7 +55,8 @@ class Envelope
 
 class NoEnvelope: public Envelope
 {
-    double getAmplitude(double timeIndexSeconds);
+    public:
+        double getAmplitude(double timeIndexSeconds);
 };
 
 // Attack, Decay, Sustain, Release (ADSR) Envelope: https://en.wikipedia.org/wiki/Envelope_(music)
@@ -58,6 +72,15 @@ class ADSREnvelope: public Envelope
         double releaseAmplitude;
     public:
         ADSREnvelope(double durationSeconds);
+        double getAmplitude(double timeIndexSeconds);
+};
+
+class BellEnvelope: public Envelope
+{
+    private:
+        double tau; // duration it takes for the signal to decay to 1/e = 36.8%
+    public:
+        BellEnvelope(double tau);
         double getAmplitude(double timeIndexSeconds);
 };
 
