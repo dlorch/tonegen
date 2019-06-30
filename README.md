@@ -1,9 +1,6 @@
 Tone generator
 ==============
 
-About
------
-
 This program generates sound.
 
 What is sound? Sound is essentially [air molecules](https://animagraffs.com/loudspeaker/)
@@ -36,9 +33,13 @@ $ ./tonegen
 Wrote output/mary.wav
 Wrote output/bells.wav
 ```
-Now play back [mary.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/mary.mp3) or [bells.wav](https://raw.githubusercontent.com/dlorch/tonegen/master/output/bells.mp3) (converted to .mp3 using `sox` for convenience).
 
-The following is how [Audacity](https://www.audacityteam.org/) represents the file:
+Now play back [bells.wav](https://www.youtube.com/watch?v=8AOVSeho0x8) (uploaded to YouTube for convenience).
+
+Visualisation
+-------------
+
+This is is how [Audacity](https://www.audacityteam.org/) represents the file.
 
 Section with "pure tone" (sine waves):
 
